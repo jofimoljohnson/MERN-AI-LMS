@@ -94,10 +94,10 @@ const Navbar = () => {
 
                 {/* Dropdown */}
                 {show && (
-                   <div className="absolute z-50 top-[120%] left-[-50px] flex flex-col gap-3 bg-white-500 px-[12px] py-[12px] rounded-xl border border-gray-300 shadow-lg">
+                   <div className="absolute z-50 top-[120%] right-0 flex flex-col gap-3 bg-black px-[12px] py-[12px] rounded-xl border border-gray-300 shadow-lg">
 
                         <span
-                            className="w-[160px] text-center bg-black text-white px-[20px] py-[10px] rounded-lg cursor-pointer hover:bg-gray-700 transition"
+                           className="w-[160px] text-center bg-white text-black px-[20px] py-[10px] rounded-lg cursor-pointer hover:bg-gray-300 transition"
                             onClick={() => {
                                 setShow(false);
                                 navigate("/profile");
@@ -107,7 +107,7 @@ const Navbar = () => {
                         </span>
 
                         <span
-                            className="w-[160px] text-center bg-black text-white px-[20px] py-[10px] rounded-lg cursor-pointer hover:bg-gray-700 transition"
+                           className="w-[160px] text-center bg-white text-black px-[20px] py-[10px] rounded-lg cursor-pointer hover:bg-gray-300 transition"
                             onClick={() => {
                                 setShow(false);
                                 navigate("/mycourses");
