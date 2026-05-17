@@ -1,7 +1,3 @@
-
-
-
-
 import { useDispatch, useSelector } from "react-redux";
 import { IoPersonCircle } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
@@ -33,6 +29,7 @@ const Navbar = () => {
             toast.success("Logout successfully");
         } catch (error) {
             console.log(error);
+
             toast.error(error.response.data.message);
         }
     };
@@ -75,6 +72,7 @@ const Navbar = () => {
                     </div>
                 )}
 
+                {/* Dashboard */}
                 {userData?.role === "educator" && (
                     <div
                         className="px-[20px] py-[10px] border-2 border-white text-white bg-black rounded-[10px] text-[18px] cursor-pointer"
@@ -84,6 +82,7 @@ const Navbar = () => {
                     </div>
                 )}
 
+                {/* Login / Logout */}
                 {!userData ? (
                     <span
                         className="px-[20px] py-[10px] border-2 border-white text-white rounded-[10px] text-[18px] cursor-pointer bg-[#000000d5]"
@@ -102,10 +101,11 @@ const Navbar = () => {
 
                 {/* Dropdown */}
                 {show && (
-                    <div className="absolute z-50 top-[120%] right-0 flex flex-col gap-3 bg-black px-[12px] py-[12px] rounded-xl border border-gray-300 shadow-lg">
+                    <div className="absolute z-50 top-[110%] right-[8%] flex flex-col gap-2 bg-black px-[10px] py-[10px] rounded-xl border border-gray-300 shadow-lg">
 
+                        {/* My Profile */}
                         <span
-                            className="w-[160px] text-center bg-white text-black px-[20px] py-[10px] rounded-lg cursor-pointer hover:bg-gray-300 transition"
+                            className="w-[150px] text-center bg-white text-black px-[15px] py-[8px] rounded-lg cursor-pointer hover:bg-gray-300 transition"
                             onClick={() => {
                                 setShow(false);
                                 navigate("/profile");
@@ -114,8 +114,9 @@ const Navbar = () => {
                             My Profile
                         </span>
 
+                        {/* My Courses */}
                         <span
-                            className="w-[160px] text-center bg-white text-black px-[20px] py-[10px] rounded-lg cursor-pointer hover:bg-gray-300 transition"
+                            className="w-[150px] text-center bg-white text-black px-[15px] py-[8px] rounded-lg cursor-pointer hover:bg-gray-300 transition"
                             onClick={() => {
                                 setShow(false);
                                 navigate("/mycourses");
@@ -148,7 +149,7 @@ const Navbar = () => {
                     onClick={() => setShowHam((prev) => !prev)}
                 />
 
-                {/* Profile */}
+                {/* Profile Image */}
                 {userData?.photoUrl ? (
                     <img
                         src={userData?.photoUrl}
@@ -161,7 +162,7 @@ const Navbar = () => {
                     </div>
                 )}
 
-                {/* Profile Button */}
+                {/* My Profile */}
                 <div
                     className="w-[200px] h-[65px] flex items-center justify-center border-2 text-white bg-black rounded-[10px] text-[18px] cursor-pointer"
                     onClick={() => {
@@ -172,7 +173,7 @@ const Navbar = () => {
                     My Profile
                 </div>
 
-                {/* Courses Button */}
+                {/* My Courses */}
                 <div
                     className="w-[200px] h-[65px] flex items-center justify-center border-2 text-white bg-black rounded-[10px] text-[18px] cursor-pointer"
                     onClick={() => {
