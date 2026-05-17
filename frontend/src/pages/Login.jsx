@@ -79,12 +79,10 @@ const Login = () => {
 
     return (
         <div className="bg-[#dddbdb] w-full min-h-screen flex items-center justify-center overflow-x-hidden px-3 py-5">
-
             <form
                 className="w-full max-w-[800px] min-h-[600px] bg-white shadow-xl rounded-2xl flex relative"
                 onSubmit={(e) => e.preventDefault()}
             >
-
                 <FaArrowLeftLong
                     className="absolute top-6 left-5 md:left-10 w-6 h-6 cursor-pointer text-gray-700 hover:text-black transition"
                     onClick={() => navigate("/")}
@@ -92,15 +90,10 @@ const Login = () => {
 
                 {/* Left Section */}
                 <div className="w-full md:w-[50%] flex flex-col items-center justify-center gap-4 py-10">
-
                     <div>
-                        <h1 className="font-semibold text-black text-2xl">
-                            Welcome back
-                        </h1>
+                        <h1 className="font-semibold text-black text-2xl">Welcome back</h1>
 
-                        <h2 className="text-[#999797] text-[18px]">
-                            Login in your account
-                        </h2>
+                        <h2 className="text-[#999797] text-[18px]">Login in your account</h2>
                     </div>
 
                     {/* Email */}
@@ -153,18 +146,11 @@ const Login = () => {
                         onClick={handleLogin}
                         disabled={loading}
                     >
-                        {loading ? (
-                            <ClipLoader size={25} color="white" />
-                        ) : (
-                            "Login"
-                        )}
+                        {loading ? <ClipLoader size={25} color="white" /> : "Login"}
                     </button>
 
                     {/* Forgot Password */}
-                    <span
-                        className="text-[13px] cursor-pointer text-[#585757]"
-                        onClick={() => navigate("/forget")}
-                    >
+                    <span className="text-[13px] cursor-pointer text-[#585757]" onClick={() => navigate("/forget")}>
                         Forgot your password?
                     </span>
 
@@ -186,36 +172,30 @@ const Login = () => {
                     >
                         <img src={google} alt="" className="w-[35px]" />
 
-                        <span className="text-[18px] text-gray-500">
-                            Google
-                        </span>
+                        <span className="text-[18px] text-gray-500">Google</span>
                     </div>
 
                     {/* Signup */}
                     <div className="text-[#6f6f6f]">
                         Create new account?
-
                         <span
                             className="underline underline-offset-1 text-black cursor-pointer ml-1"
                             onClick={() => navigate("/signup")}
                         >
                             SignUp
                         </span>
+                        <div>
+                            <p> Razorpay dummy card details:4100 2800 0000 1007</p>
+                            <p>CVV:123</p>
+                        </div>
                     </div>
                 </div>
 
                 {/* Right Section */}
                 <div className="w-[50%] bg-black rounded-r-2xl hidden md:flex items-center justify-center flex-col">
+                    <img src={logo} alt="logo" className="w-30 shadow-2xl" />
 
-                    <img
-                        src={logo}
-                        alt="logo"
-                        className="w-30 shadow-2xl"
-                    />
-
-                    <span className="text-2xl text-white">
-                        LEARN SPHERE
-                    </span>
+                    <span className="text-2xl text-white">LEARN SPHERE</span>
                 </div>
             </form>
         </div>
